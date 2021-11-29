@@ -17,7 +17,7 @@ public class HomeControler {
 		Pedidos pedido = new Pedidos();
 		pedido.setNome("celular topVenom");
 		pedido.setPreco(1.233);
-		pedido.setUrlImagem("http:urlvenomcelularImagem");
+		pedido.setUrlImagem("https://m.media-amazon.com/images/I/51biFsa3vUS._AC_SL1000_.jpg");
 		pedido.setUrlProduto("http:urlvenomcelular");
 		pedido.setDescricao("venom melhor");
 		

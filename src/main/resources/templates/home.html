@@ -11,9 +11,12 @@
     <title>Pedidos</title>
   </head>
   <body>
+   <!-- Content here -->
+  
+
    <!-- inicio navbar -->
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary ">
-  <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary  ">
+  <div class="container-fluid container-sm">
     <a class="navbar-brand" href="#">Mudi</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,21 +34,41 @@
   </div>
 </nav>
 <!-- fim navbar -->
-    oi ,<h1 th:text="${nome}"></h1 >
-    <!-- cabeçalho -->
+ 
+   
+    <div class="container"> <!-- Content here -->
+ 
+   <!-- cabeçalho -->
     <div class=".bg-light.bg-gradient p-3 mb-2 text-white"><p class="text-black-50 text-center fs-1">Meus Pedidos</p> </div>
     <!-- fim cabeçalho -->
-    <div th:each = "pedido: ${pedidos}">
-    <div th:text="${pedido.nome}">Nome do produto</div >
-    <div th:text="${pedido.preco}">Valor: 22.22</div >
-    <div >Data de entrega: 29/11/2021</div >
-    <div th:src="${pedido.urlImagem}">Produto</div >
-    <div th:text="${pedido.urlProduto}">url</div >
-    <div th:text="${pedido.descricao}">Decrição</div >
+    <!-- inicio card -->
+   
+  
+    <div class="card"  style="max-width: 18rem;" th:each = "pedido: ${pedidos}">
+  	<img th:src="${pedido.urlImagem}" class="card-img-top" alt="imagemFoto" >
+  	 <div class="card-header"  th:text="${pedido.nome}">Header</div>
+  	<div class="card-body">    <!-- inicio card body -->
+    <p class="card-text" th:text="${pedido.preco}">preco</p>
+    <p class="card-text" >Data de entrega: 29/11/2021</p>
+    <div>Produto: </div>
     <div>
-    <textarea></textarea>
+    <input type="text" class="form-control" th:value="${pedido.urlProduto}" >
     </div>
-    </div >
+    <div>Descricao: </div>
+    <div>
+    <input type="text" class="form-control" th:value="${pedido.descricao}" >
+    </div>
+
+    
+  	</div> <!-- fim card body -->
+	</div><!-- fim card -->
+	
+	
+
+    
+  
+    </div> <!-- Content here-end -->
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
