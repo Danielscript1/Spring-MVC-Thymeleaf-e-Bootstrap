@@ -12,9 +12,15 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
+	
 	//buscar por Pedido
 	//buscar todos os Pedido
 		public List<Pedido> findAll() {
 			return pedidoRepository.findAll();
+		}
+	
+		public Pedido salvar(Pedido pedido) {
+			return pedidoRepository.save(pedido);
+			
 		}
 }
