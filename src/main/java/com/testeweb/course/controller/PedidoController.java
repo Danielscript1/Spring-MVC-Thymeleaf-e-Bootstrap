@@ -29,7 +29,9 @@ public class PedidoController {
 	public String novo(@Valid RequisicaoNovoPedido requisicao,  BindingResult result) {
 		if(result.hasErrors()) {
 			return "pedido/formulario";
-		} 
+		}
+			
+		
 		Pedido pedido = requisicao.toPedido();
 		pedidoService.salvar(pedido);
 		return "pedido/formulario";

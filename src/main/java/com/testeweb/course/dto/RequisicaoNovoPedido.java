@@ -5,13 +5,13 @@ import javax.validation.constraints.NotBlank;
 import com.testeweb.course.model.Pedido;
 
 public class RequisicaoNovoPedido {
-	@NotBlank
+	@NotBlank(message = "Campo nome obrigatorio")
 	private String Nomeproduto;
-	@NotBlank
+	@NotBlank(message = "Campo Url obrigatorio")
 	private String urlName;
-	@NotBlank
+	@NotBlank(message = "Campo UrlImagem obrigatorio")
 	private String urlImagem;
-	@NotBlank
+	@NotBlank(message = "Campo descricao")
 	private String descricao;
 	public String getNomeproduto() {
 		return Nomeproduto;
