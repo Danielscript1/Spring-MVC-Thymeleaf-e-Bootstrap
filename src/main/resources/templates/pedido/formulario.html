@@ -33,14 +33,16 @@
 			</div>
 			<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
 		</nav>
-
+	<div th:if="${flashMessage != null}">
+    <div th:replace="pedido/mensagemValidacao :: alert (type=${flashType}, message=${flashMessage})"></div>
+</div>
 		<!-- fim navbar -->
 		<div class="card">
 			<form th:object="${requisicaoNovoPedido}" action="/pedido/novo" method="POST" class="card-body">
 				<div class="form-group">
 					<div class="mb-3">
 						<label class="form-label">Produto</label>
-						<input th:field="*{Nomeproduto}" th:errorClass="is-invalid" type="text" class="form-control "
+						<input th:field="*{Nomeproduto}" th:errorClass="is-invalid"  type="text" class="form-control "
 							placeholder="nome do produto">
 						<div class="invalid-feedback" th:errors="*{Nomeproduto}">
 							o nome deve ser preenchido!
