@@ -1,11 +1,17 @@
 package com.testeweb.course.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import com.testeweb.course.model.Pedido;
 
 public class RequisicaoNovoPedido {
+	@NotBlank
 	private String Nomeproduto;
+	@NotBlank
 	private String urlName;
+	@NotBlank
 	private String urlImagem;
+	@NotBlank
 	private String descricao;
 	public String getNomeproduto() {
 		return Nomeproduto;

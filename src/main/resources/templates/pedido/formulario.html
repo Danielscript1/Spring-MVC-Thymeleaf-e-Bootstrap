@@ -34,27 +34,49 @@
 			</nav>
 
 	<!-- fim navbar -->
+	<div class="card">
+	<form th:object="${requisicaoNovoPedido}"  action="/pedido/novo" method="POST"  class="card-body">
+	<div class="form-group">
+   <div class="mb-3">
+   <label class="form-label">Produto</label>
+   <input  th:field="*{Nomeproduto}"  type="text" class="form-control is-invalid"  aria-describedby="validationServer03Feedback" id="validationServer03" required placeholder="nome do produto"  >
+   <div id="validationServer03Feedback" class="invalid-feedback">
+   	o nome deve ser preenchido!
+   </div  >
+   </div>
+	</div>
+	<div class="form-group">
+   <div class="mb-3">
+   <label  class="form-label">Url</label>
+   <input th:field="*{urlName}"  type="text" class="form-control invalid"  placeholder="nome do produto">
+    <div  class="invalid-feedback" th:errors="*{urlName}">
+   a url deve ser preenchido!
+   </div >
+   </div>
+   </div>
 	
-	<form action="/pedido/novo" method="POST">
+	<div class="form-group">
    <div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">Produto</label>
-   <input type="text" class="form-control" name="Nomeproduto" id="exampleFormControlInput1" placeholder="nome do produto">
+   <label  class="form-label">Imagem</label>
+   <input  th:field="*{urlImagem}"   type="text" class="form-control"  placeholder="nome do produto"  >
+   <div  class="invalid-feedback" th:errors="*{urlImagem}">
+   	url da imagem preenchido!
+   </div >
    </div>
+	</div>
+	<div class="form-group">
    <div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">Url</label>
-   <input type="text" class="form-control" name="urlName" id="exampleFormControlInput1" placeholder="nome do produto">
+   <label class="form-label">Descrição</label>
+   <textarea th:field="*{descricao}" class="form-control"  rows="3"  ></textarea>
+   <div  class="invalid-feedback" th:errors="*{descricao}">
+   	campo obrigatorio!
+   </div  >
    </div>
-   <div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">Imagem</label>
-   <input type="text" class="form-control" name="urlImagem" id="exampleFormControlInput1" placeholder="nome do produto"  >
-   </div>
-   <div class="mb-3">
-   <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-   <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3"  ></textarea>
-   </div>
+	</div>
    <button type="submit" class="btn btn-primary mb-3">Cadastrar</button >
+	
   </form>
-
+	</div>
 	
 	
 
@@ -63,7 +85,7 @@
 
 
 
-	</div> <!-- Content here-end -->
+	</div > <!-- Content here-end -->
 
 	<!-- Optional JavaScript; choose one of the two! -->
 
@@ -77,6 +99,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+    
 </body>
 
 </html>
