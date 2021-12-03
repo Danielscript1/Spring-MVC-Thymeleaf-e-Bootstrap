@@ -1,28 +1,20 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+<head th:replace="~{base::head}">
+	
 	<title>Novo Pedido</title>
-</head>
+</head >
 
 <body>
+<div th:replace="~{base::logo}"></div >
 	<!-- Content here -->
 
 
 
 	<div class="container">
 
-		<div class="jumbotron mb-0">
-			<h1 class="display-4">Novo Pedido</h1>
-		</div>
+		<div th:replace="~{base::titulo('Novo Pedido')}"></div >
 
 		<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 			<div class="navbar-nav">
