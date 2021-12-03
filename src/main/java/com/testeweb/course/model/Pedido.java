@@ -1,6 +1,7 @@
 package com.testeweb.course.model;
 
-import java.util.Objects;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,74 +15,72 @@ import javax.persistence.Table;
 public class Pedido {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
-	private Double preco;
-	private String urlImagem;
-	private String urlProduto;
-	private String descricao;
-	@Enumerated(EnumType.STRING)
-	private StatusPedido statusPedido;
 	
-	public Long getId() {
-		return id;
+	private String nomeProduto;
+	private BigDecimal valorNegociado;
+	private LocalDate dataDaEntrega;
+	private String urlProduto;
+	private String urlImagem;
+	private String descricao;
+	
+	@Enumerated(EnumType.STRING)
+	private StatusPedido status;
+
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
-	public String getNome() {
-		return nome;
+
+	public BigDecimal getValorNegociado() {
+		return valorNegociado;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setValorNegociado(BigDecimal valorNegociado) {
+		this.valorNegociado = valorNegociado;
 	}
-	public String getUrlImagem() {
-		return urlImagem;
+
+	public LocalDate getDataDaEntrega() {
+		return dataDaEntrega;
 	}
-	public void setUrlImagem(String urlImagem) {
-		this.urlImagem = urlImagem;
+
+	public void setDataDaEntrega(LocalDate dataDaEntrega) {
+		this.dataDaEntrega = dataDaEntrega;
 	}
+
 	public String getUrlProduto() {
 		return urlProduto;
 	}
+
 	public void setUrlProduto(String urlProduto) {
 		this.urlProduto = urlProduto;
 	}
+
+	public String getUrlImagem() {
+		return urlImagem;
+	}
+
+	public void setUrlImagem(String urlImagem) {
+		this.urlImagem = urlImagem;
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	public Double getPreco() {
-		return preco;
-	}
-	public void setPreco(Double preco) {
-		this.preco = preco;
+	public StatusPedido getStatus() {
+		return status;
 	}
 	
-	public StatusPedido getStatusPedido() {
-		return statusPedido;
+	public void setStatus(StatusPedido status) {
+		this.status = status;
 	}
-	public void setStatusPedido(StatusPedido statusPedido) {
-		this.statusPedido = statusPedido;
-	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pedido other = (Pedido) obj;
-		return Objects.equals(id, other.id);
-	}
-	
 	
 	
 }

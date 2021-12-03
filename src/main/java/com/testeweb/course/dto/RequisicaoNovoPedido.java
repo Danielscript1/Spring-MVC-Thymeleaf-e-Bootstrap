@@ -40,11 +40,11 @@ public class RequisicaoNovoPedido {
 	}
 	public Pedido toPedido() {
 		Pedido pedido = new Pedido();
-		pedido.setNome(Nomeproduto);
+		pedido.setNomeProduto(Nomeproduto);
 		pedido.setUrlImagem(urlImagem);
 		pedido.setUrlProduto(urlName);
 		pedido.setDescricao(descricao);
-		pedido.setStatusPedido(StatusPedido.AGUARDANDO);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		
 		return pedido;
 	}
