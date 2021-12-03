@@ -41,8 +41,11 @@
 		<div class="row col-12" >
 		
 		<div class="card border-light mb-3 pt-5 pl-5" style="max-width: 540px; " th:each="pedido: ${pedidos}">
-		
-		<div class="card-header text-center" th:text="${pedido.nome}">Header</div>
+		<th:block th:switch="${pedido.statusPedido.name()}" >
+		<div  th:case="'AGUARDANDO'" class="card-header text-center alert-warning" th:text="${pedido.nome}">Header</div>
+		<div  th:case="'APROVADO'" class="card-header text-center alert-success" th:text="${pedido.nome}">Header</div>
+		<div  th:case="'ENTREGUE'" class="card-header text-center alert-primary" th:text="${pedido.nome}">Header</div>
+		</th:block>
 			<div class="row">
 				<!-- inicio da row  -->
 				<div class="col-12 col-sm-4 mb-3">

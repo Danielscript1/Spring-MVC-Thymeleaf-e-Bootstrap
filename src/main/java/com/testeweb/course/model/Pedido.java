@@ -3,6 +3,8 @@ package com.testeweb.course.model;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,6 +19,8 @@ public class Pedido {
 	private String urlImagem;
 	private String urlProduto;
 	private String descricao;
+	@Enumerated(EnumType.STRING)
+	private StatusPedido statusPedido;
 	
 	public Long getId() {
 		return id;
@@ -54,6 +58,13 @@ public class Pedido {
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+	
+	public StatusPedido getStatusPedido() {
+		return statusPedido;
+	}
+	public void setStatusPedido(StatusPedido statusPedido) {
+		this.statusPedido = statusPedido;
 	}
 	@Override
 	public int hashCode() {

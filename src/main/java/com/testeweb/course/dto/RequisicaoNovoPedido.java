@@ -3,6 +3,7 @@ package com.testeweb.course.dto;
 import javax.validation.constraints.NotBlank;
 
 import com.testeweb.course.model.Pedido;
+import com.testeweb.course.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
 	@NotBlank(message = "Campo nome obrigatorio")
@@ -43,6 +44,8 @@ public class RequisicaoNovoPedido {
 		pedido.setUrlImagem(urlImagem);
 		pedido.setUrlProduto(urlName);
 		pedido.setDescricao(descricao);
+		pedido.setStatusPedido(StatusPedido.AGUARDANDO);
+		
 		return pedido;
 	}
 	
