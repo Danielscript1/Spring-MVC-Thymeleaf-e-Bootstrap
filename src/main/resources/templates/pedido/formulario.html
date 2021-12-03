@@ -35,7 +35,7 @@
 		</nav>
 	<div th:if="${flashMessage != null}">
     <div th:replace="pedido/mensagemValidacao :: alert (type=${flashType}, message=${flashMessage})"></div>
-</div>
+	</div>
 		<!-- fim navbar -->
 		<div class="card">
 			<form th:object="${requisicaoNovoPedido}" action="/pedido/novo" method="POST" class="card-body">
